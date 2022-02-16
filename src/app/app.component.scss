@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@1,300&display=swap');
+
+$mainFont : "Zilla Slab" ,serif;
+
+$gradientColor : #6c7055;
+$gradientColor1 : #6c7055;
+
+// @mixin ile tanımladıgım blogu @include isim ile çağrıablıriz
+
+@mixin enableFlex($direction :false)
+{
+   display :flex;
+   justify-content: center;
+   align-items: center;
+   @if $direction{
+       flex-direction: column; 
+   }
+}
+
+body{
+    background-color: linear-gradient( $gradientColor,$gradientColor1);
+     height: 100vh;
+     width: 100vh;
+     @include enableFlex();  
+}
+
+*{
+    font-family: $mainFont;
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: linear-gradient( $gradientColor,$gradientColor1);
+}
